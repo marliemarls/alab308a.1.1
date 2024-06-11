@@ -23,6 +23,34 @@ try{
     
 }
 //invoking / calling the function 
-incrementCount()
+// incrementCount()
 //it gives out at 8972
+
+
 //part 2: Trampolines
+// Write a recursive function that completely flattens an array of nested arrays, regardless of how deeply nested the arrays are.
+// Once your recursive function is complete, trampoline it.
+//i will create a function that will take in a nested array
+//function will flatten
+
+function flattenArr(arr){
+    const givenArr = arr.flat()
+    try{
+        console.log(givenArr.flat())
+        flattenArr(givenArr)
+    } catch(e){
+        console.error(e)
+        console.log(e)
+    }
+
+}
+
+console.log([[[[1], [2], [3]]]])
+
+// console.log(flattenArr([[[[1], [2], [3]]]]))
+
+//part 3: deferred execution
+
+const flatterArr = (arr) => {
+    if(arr[0] !== typeof Array ) return arr;
+}
