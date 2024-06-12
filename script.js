@@ -6,7 +6,7 @@
 
 //declared a variable called counter that will start at zero
 let counter = 0;
-
+let nestedArr = [[[[1], [2], [3]]]]
 //creating a function that is will increment the counter
 function incrementCount(){
     //using the try catch method to be able to try a block of code, if that block of code has an error, the method will CATCH the error and console it to me
@@ -28,6 +28,7 @@ try{
 
 
 //part 2: Trampolines
+
 // Write a recursive function that completely flattens an array of nested arrays, regardless of how deeply nested the arrays are.
 // Once your recursive function is complete, trampoline it.
 //i will create a function that will take in a nested array
@@ -45,12 +46,18 @@ function flattenArr(arr){
 
 }
 
-console.log([[[[1], [2], [3]]]])
 
 // console.log(flattenArr([[[[1], [2], [3]]]]))
 
-//part 3: deferred execution
-
-const flatterArr = (arr) => {
-    if(arr[0] !== typeof Array ) return arr;
+const trampoline = (func, arr) => {
+    const usingHelper = func(arr)
+    return usingHelper
 }
+
+function newFunc(arr){
+    return arr.flat(Infinity)
+}
+
+// console.log(trampoline(newFunc, nestedArr))
+
+//part 3: deferred execution
